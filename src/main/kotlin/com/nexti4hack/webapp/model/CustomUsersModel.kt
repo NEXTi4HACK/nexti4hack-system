@@ -2,6 +2,9 @@ package com.nexti4hack.webapp.model
 
 import java.util.*
 
+/**
+ * ユーザ情報カスタムモデル
+ */
 class CustomUsersModel {
         var userId: String = ""
         var loginId: ByteArray? = null

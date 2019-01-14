@@ -1,5 +1,7 @@
 package com.nexti4hack.webapp.component
 
+import com.nexti4hack.webapp.mapper.CustomFunctionMapper
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 import java.util.*
 import javax.crypto.Cipher
@@ -12,6 +14,10 @@ import javax.crypto.spec.SecretKeySpec
 @Component
 open class EncryptionComponent {
 
+    // CustomMapper
+    @Autowired
+    lateinit var customFunctionMapper: CustomFunctionMapper
+
     companion object {
         /* アルゴリズム */
         const val ALGORITHM :String = "AES"
@@ -22,7 +28,7 @@ open class EncryptionComponent {
      */
     fun aesEncrypt(value: String): ByteArray {
         // 暗号化キーを設定
-        val keyBytes = Arrays.copyOf("falcon".toByteArray(Charsets.UTF_8), 16)
+        val keyBytes = Arrays.copyOf(customFunctionMapper.selectKeyValue().toByteArray(Charsets.UTF_8), 16)
 
         var key = SecretKeySpec(keyBytes, ALGORITHM)
         var cipher = Cipher.getInstance(ALGORITHM)
@@ -34,9 +40,9 @@ open class EncryptionComponent {
     /**
      * 復号化
      */
-    fun aesDecrypt(value: ByteArray): String {
+    fun aesDecrypt(value: ByteArray?): String {
         // 復号化キーを設定
-        val keyBytes = Arrays.copyOf("falcon".toByteArray(Charsets.UTF_8), 16)
+        val keyBytes = Arrays.copyOf(customFunctionMapper.selectKeyValue().toByteArray(Charsets.UTF_8), 16)
 
         var key = SecretKeySpec(keyBytes, ALGORITHM)
         var decipher = Cipher.getInstance(ALGORITHM)
