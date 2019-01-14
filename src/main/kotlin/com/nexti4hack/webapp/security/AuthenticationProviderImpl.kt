@@ -11,6 +11,9 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication
 import org.springframework.stereotype.Component
 
+/**
+ * ログイン認証
+ */
 @Component
 open class AuthenticationProviderImpl: AuthenticationProvider {
 
