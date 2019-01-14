@@ -6,5 +6,6 @@ import org.apache.ibatis.annotations.Mapper
 @Mapper
 interface CustomUsersMapper {
 
+    // ログインIDからユーザ情報を取得
     fun selectByLoginId(userId: String): CustomUsersModel
 }
