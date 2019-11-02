@@ -1,6 +1,30 @@
-# Ignore Gradle project-specific cache directory
+### Ignore ###
 .gradle
+/build/
+!gradle/wrapper/gradle-wrapper.jar
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+/out/
+/tmp/
+/bin/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/ 
+/.nb-gradle/
 .DS_Store
-
-# Ignore Gradle build output directory
-build
+### My Settings ###
+.circleci

@@ -8,4 +8,4 @@
  */
 
 rootProject.name = "nexti4hack-system"
-include "common", "webapp"
+include(":common", ":webapp")
