@@ -16,22 +16,22 @@
         </jdbcConnection>
 
         <!-- SELECT 結果等を格納するドメインモデルを生成する設定 -->
-        <javaModelGenerator targetPackage="com.nexti4hack.db.model"
+        <javaModelGenerator targetPackage="com.nexti4hack.common.db.model"
                             targetProject="src/main/java">
             <property name="enableSubPackages" value="true" />
             <property name="trimStrings" value="true" />
         </javaModelGenerator>
-        <!-- SQL 設定が記述された XML を生成する設定 -->
-        <sqlMapGenerator targetPackage="com.nexti4hack.db.mapper"
-                         targetProject="src/main/resources">
-            <property name="enableSubPackages" value="true" />
-        </sqlMapGenerator>
         <!-- マッパークラスを生成する設定 -->
-        <javaClientGenerator targetPackage="com.nexti4hack.db.mapper"
+        <javaClientGenerator targetPackage="com.nexti4hack.common.db.mapper"
                              targetProject="src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="true" />
         </javaClientGenerator>
+        <!-- SQL 設定が記述された XML を生成する設定 -->
+        <sqlMapGenerator targetPackage="com.nexti4hack.common.db.mapper"
+                         targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
 
         <!-- コードを生成するテーブルを指定 -->
         <table tableName="users"/>
