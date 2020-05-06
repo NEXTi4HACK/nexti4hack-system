@@ -28,7 +28,6 @@ open class AuthenticationProviderImpl: AuthenticationProvider {
     @Autowired
     lateinit var customUsersMapper: CustomUsersMapper
 
-
     // 認証処理
     override fun authenticate(authentication: Authentication): UsernamePasswordAuthenticationToken {
 
@@ -40,7 +39,6 @@ open class AuthenticationProviderImpl: AuthenticationProvider {
         val customUsersModel = customUsersMapper.selectByLoginId(loginDto.loginId) ?: throw BadCredentialsException("")
 
         // 取得できなかった場合、認証失敗
-
         // パスワード照合で不一致の場合、認証失敗
         if (!passwordEncoder.matches(password, customUsersModel.password)) {
             throw BadCredentialsException("")

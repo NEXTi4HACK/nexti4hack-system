@@ -93,3 +93,23 @@ project(':webapp') {
         launchScript()
     }
 }
+
+project(':api') {
+    apply plugin: 'application'
+    apply plugin: 'org.springframework.boot'
+
+    dependencies {
+        implementation("org.springframework:spring-web")
+        implementation('com.fasterxml.jackson.module:jackson-module-kotlin')
+    }
+    dependencyManagement {
+        imports { mavenBom("org.springframework.boot:spring-boot-dependencies:${springBootVersion}") }
+    }
+
+    mainClassName = 'com.nexti4hack.api.ApiApplication'
+    bootJar {
+        baseName = 'nexti4hack-api'
+        version = ''
+        launchScript()
+    }
+}

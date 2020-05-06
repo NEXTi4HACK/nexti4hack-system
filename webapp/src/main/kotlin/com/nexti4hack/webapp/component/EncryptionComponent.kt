@@ -54,4 +54,5 @@ open class EncryptionComponent {
         // 復号して返却(String)
         return String(decipher.doFinal(value))
     }
+
 }
