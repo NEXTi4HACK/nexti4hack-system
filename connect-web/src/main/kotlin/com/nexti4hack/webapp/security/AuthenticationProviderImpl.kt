@@ -1,6 +1,6 @@
 package com.nexti4hack.webapp.security
 
-import com.nexti4hack.common.component.PasswordEncoder
+import com.nexti4hack.webapp.component.PasswordEncoder
 import com.nexti4hack.webapp.dto.LoginDto
 import com.nexti4hack.webapp.mapper.CustomUsersMapper
 import org.slf4j.LoggerFactory

@@ -1,4 +1,4 @@
-package com.nexti4hack.common.component
+package com.nexti4hack.webapp.component
 
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Component
