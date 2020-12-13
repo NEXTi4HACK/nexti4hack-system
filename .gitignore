@@ -27,3 +27,4 @@ build/
 /.nb-gradle/
 .DS_Store
 ### My Settings ###
+/db/mysql_data/
