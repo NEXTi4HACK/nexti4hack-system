@@ -6,10 +6,10 @@ import org.springframework.web.bind.annotation.ResponseBody
 import org.springframework.web.bind.annotation.RestController
 
 @RestController
-@RequestMapping("api")
+@RequestMapping("/v1/user")
 class UserInfoController {
 
-    @RequestMapping(value = ["/userinfo"], method = [RequestMethod.POST])
+    @RequestMapping(value = ["/info"], method = [RequestMethod.POST])
     @ResponseBody
     fun userInfo(): String {
         return ""

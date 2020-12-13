@@ -1,5 +1,16 @@
+USE webapp;
 
+-- create function
+DELIMITER |
+CREATE FUNCTION get_encrypt_key()
+RETURNS VARCHAR(12) DETERMINISTIC
+BEGIN
+  RETURN 'webapp';
+END;
+|
+DELIMITER ;
 
+-- create trigger
 DELIMITER |
 
 CREATE TRIGGER insert_trigger_users BEFORE INSERT ON users
@@ -16,6 +27,5 @@ CREATE TRIGGER update_trigger_users BEFORE UPDATE ON users
     SET NEW.update_user = user();
   END;
 |
-
 
 DELIMITER ;

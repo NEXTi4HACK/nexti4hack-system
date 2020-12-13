@@ -1,6 +1,7 @@
 package com.nexti4hack.webapp.model
 
-import java.util.*
+import java.util.Date
+
 
 /**
  * ユーザ情報カスタムモデル

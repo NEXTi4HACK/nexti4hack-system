@@ -1,6 +1,7 @@
-DROP TABLE IF EXISTS users;
+USE webapp;
 
 -- users
+DROP TABLE IF EXISTS users;
 create table users
 (
   user_id varchar(255) BINARY primary key,
