@@ -36,7 +36,7 @@ open class AuthenticationProviderImpl: AuthenticationProvider {
         val password = authentication.credentials.toString()
 
         // 入力されたログインIDからユーザ情報を取得
-        val customUsersModel = customUsersMapper.selectByLoginId(loginDto.loginId) ?: throw BadCredentialsException("")
+        val customUsersModel = customUsersMapper.selectByLoginId(loginDto.loginId)
 
         // 取得できなかった場合、認証失敗
         // パスワード照合で不一致の場合、認証失敗

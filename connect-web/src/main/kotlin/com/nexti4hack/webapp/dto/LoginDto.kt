@@ -9,5 +9,5 @@ data class LoginDto(
         // ログインID
         var loginId: String = "",
         // パスワード
-        var password: String = ""
+        var password: String? = ""
 )
