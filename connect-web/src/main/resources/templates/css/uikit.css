@@ -4330,8 +4330,12 @@ select.uk-form-width-xsmall {
   content: '.';
 }
 :root {
-  --uk-leader-fill-content: .;
 }
+
+:root {
+  --uk-leader-fill-content: '.';
+}
+
 /* ========================================================================
    Component: Notification
  ========================================================================== */
