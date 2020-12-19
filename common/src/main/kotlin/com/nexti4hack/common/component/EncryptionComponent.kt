@@ -7,14 +7,12 @@ import javax.annotation.PostConstruct
 import javax.crypto.Cipher
 import javax.crypto.spec.SecretKeySpec
 
-
 /**
  * 暗号化/復号コンポーネント
  */
 @Component
-open class EncryptionComponent {
+class EncryptionComponent {
 
-    // CustomMapper
     @Autowired
     lateinit var customFunctionMapper: CustomFunctionMapper
 
@@ -34,10 +32,12 @@ open class EncryptionComponent {
 
     /**
      * 暗号化
+     * @param value 暗号化対象文字列
+     * @return 暗号化値(バイナリ)
      */
     fun aesEncrypt(value: String): ByteArray {
-        var key = SecretKeySpec(keyBytes, ALGORITHM)
-        var cipher = Cipher.getInstance(ALGORITHM)
+        val key = SecretKeySpec(keyBytes, ALGORITHM)
+        val cipher = Cipher.getInstance(ALGORITHM)
         cipher.init(Cipher.ENCRYPT_MODE, key)
         // 暗号化して返却(Byte)
         return cipher.doFinal(value.toByteArray(Charsets.UTF_8))
@@ -45,14 +45,15 @@ open class EncryptionComponent {
 
     /**
      * 復号
+     * @param value 暗号値(バイナリ)
+     * @return 復号値(文字列)
      */
     fun aesDecrypt(value: ByteArray?): String {
-        var key = SecretKeySpec(keyBytes, ALGORITHM)
-        var decipher = Cipher.getInstance(ALGORITHM)
+        val key = SecretKeySpec(keyBytes, ALGORITHM)
+        val decipher = Cipher.getInstance(ALGORITHM)
         decipher.init(Cipher.DECRYPT_MODE, key)
 
         // 復号して返却(String)
         return String(decipher.doFinal(value))
     }
-
 }

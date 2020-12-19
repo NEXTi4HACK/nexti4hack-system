@@ -6,10 +6,10 @@ import org.springframework.boot.runApplication
 
 @MapperScan("com.nexti4hack")
 @SpringBootApplication(scanBasePackages=["com.nexti4hack"])
-class WebappApplication {
+class WebApplication {
 	companion object {
 		@JvmStatic fun main(args: Array<String>) {
-			runApplication<WebappApplication>(*args)
+			runApplication<WebApplication>(*args)
 		}
 	}
 }

@@ -11,7 +11,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher
 
 @Configuration
 @EnableWebSecurity
-open class SecurityConfig: WebSecurityConfigurerAdapter() {
+class SecurityConfig: WebSecurityConfigurerAdapter() {
 
     @Autowired
     lateinit var authProvider:  AuthenticationProviderImpl

@@ -15,16 +15,14 @@ import org.springframework.stereotype.Component
  * ログイン認証
  */
 @Component
-open class AuthenticationProviderImpl: AuthenticationProvider {
+class AuthenticationProviderImpl: AuthenticationProvider {
 
     // ログ
     private val log = LoggerFactory.getLogger(AuthenticationProviderImpl::class.java)
 
-    // Component
     @Autowired
     lateinit var passwordEncoder: PasswordEncoder
 
-    // CustomMapper
     @Autowired
     lateinit var customUsersMapper: CustomUsersMapper
 
