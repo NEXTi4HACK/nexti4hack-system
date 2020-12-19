@@ -2,14 +2,41 @@
 <html lang="ja" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/uikit.min.css" />
+    <script src="../js/uikit.min.js"></script>
+    <script src="../js/uikit-icons.min.js"></script>
     <title>ログインページ</title>
 </head>
 <body>
-<h1>トップページ</h1>
-<form id="loginForm" method="post" th:action="@{/login}">
-    <input type="text" name="loginId" />
-    <input type="password" name="password"/>
-    <input type="submit" value="ログイン"/>
-</form>
+    <br />
+    <div class="uk-card uk-card-default uk-width-1-2@m uk-align-center">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-expand">
+                    <h3 class="uk-card-title uk-margin-remove-bottom">LOGIN</h3>
+                </div>
+            </div>
+        </div>
+        <form id="loginForm" method="post" th:action="@{/login}">
+            <div class="uk-card-body">
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon" uk-icon="icon: user"></span>
+                        <input class="uk-input uk-form-width-large" type="text" placeholder="ID">
+                    </div>
+                </div>
+                <div class="uk-margin">
+                    <div class="uk-inline">
+                        <span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
+                        <input class="uk-input uk-form-width-large" type="password">
+                    </div>
+                </div>
+            </div>
+            <div class="uk-card-footer">
+                <a href="#" class="uk-button uk-button-text">Read more</a>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
