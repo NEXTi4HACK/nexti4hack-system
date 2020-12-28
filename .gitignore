@@ -1,7 +1,7 @@
+### Ignore ###
 .gradle
-/build/
+build/
 !gradle/wrapper/gradle-wrapper.jar
-
 ### STS ###
 .apt_generated
 .classpath
@@ -10,7 +10,6 @@
 .settings
 .springBeans
 .sts4-cache
-
 ### IntelliJ IDEA ###
 .idea
 *.iws
@@ -19,11 +18,13 @@
 /out/
 /tmp/
 /bin/
-
 ### NetBeans ###
 /nbproject/private/
 /nbbuild/
 /dist/
 /nbdist/
+/.nb-gradle/ 
 /.nb-gradle/
 .DS_Store
+### My Settings ###
+/db/mysql_data/

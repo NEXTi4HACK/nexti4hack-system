@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+    <context id="MySQLTables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true" />
+        </commentGenerator>
+        <jdbcConnection
+                driverClass="com.mysql.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:13306/webapp?useSSL=false"
+                userId="webapp"
+                password="webapp" />
+
+        <!-- SELECT 結果等を格納するドメインモデルを生成する設定 -->
+        <javaModelGenerator targetPackage="com.nexti4hack.common.db.model"
+                            targetProject="common/src/main/java">
+            <property name="enableSubPackages" value="true" />
+            <property name="trimStrings" value="true" />
+        </javaModelGenerator>
+
+        <!-- SQL 設定が記述された XML を生成する設定 -->
+        <sqlMapGenerator targetPackage="com.nexti4hack.common.db.mapper"
+                         targetProject="common/src/main/resources">
+            <property name="enableSubPackages" value="true" />
+        </sqlMapGenerator>
+
+        <!-- マッパークラスを生成する設定 -->
+        <javaClientGenerator targetPackage="com.nexti4hack.common.db.mapper"
+                             targetProject="common/src/main/java"
+                             type="XMLMAPPER">
+            <property name="enableSubPackages" value="true" />
+        </javaClientGenerator>
+
+        <!-- コードを生成するテーブルを指定 -->
+        <table tableName="users"/>
+    </context>
+</generatorConfiguration>

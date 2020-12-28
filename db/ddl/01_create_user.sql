@@ -1,0 +1,2 @@
+CREATE USER 'webapp'@'%' IDENTIFIED BY 'webapp';
+GRANT SELECT,INSERT,UPDATE,DELETE,EXECUTE,SHOW VIEW ON webapp.* TO 'webapp'@'%';
