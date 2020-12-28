@@ -20,7 +20,7 @@ class SecurityConfig: WebSecurityConfigurerAdapter() {
     override fun configure(web: WebSecurity) {
         web.ignoring().antMatchers(
                 "/css/**",
-                "/javascript/**"
+                "/js/**"
         )
     }
 
